@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+	android:clipToPadding="false"
+	android:id="@+id/swipe_refresh"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<com.chall.qonto.ui.EsRecyclerView
+		android:scrollbars="none"
+		android:id="@android:id/list"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:layoutManager="android.support.v7.widget.GridLayoutManager"/>
+	<include
+		layout="@layout/no_result_view"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+	<include
+		layout="@layout/loading_indicator"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+</android.support.v4.widget.SwipeRefreshLayout>

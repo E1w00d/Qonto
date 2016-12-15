@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="default_padding">8dp</dimen>
+	<dimen name="default_padding_large">12dp</dimen>
+
+	<dimen name="empty_page_graphic_size">60dp</dimen>
+</resources>

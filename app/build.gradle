@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    // Configures compile options
+    compileOptions {
+        encoding "UTF-8"
+
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    // Configures dex options
+    dexOptions {
+        threadCount 2
+        javaMaxHeapSize "1024M"
+    }
+
+    // Configures lint options
+    lintOptions {
+        quiet true
+        abortOnError false
+        checkReleaseBuilds false
+
+        disable 'DefaultLocale', 'SwitchIntDef'
+    }
+
+    // The default configuration, inherited by all product flavors
+    defaultConfig {
+        applicationId "com.chall.qonto"
+
+        versionCode 1
+        versionName "1.0"
+
+        minSdkVersion 17
+        targetSdkVersion 25
+
+        vectorDrawables.useSupportLibrary true
+        vectorDrawables.generatedDensities "mdpi", "hdpi", "xhdpi", "xxhdpi"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+
+            applicationIdSuffix ".debug"
+        }
+
+        release {
+            debuggable false
+            useProguard true
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    // Using these variables to sync dependency version numbers across sub-projects.
+    support = "25.1.0"
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Android support libraries
+    compile "com.android.support:design:${support}"
+    compile "com.android.support:appcompat-v7:${support}"
+    compile "com.android.support:recyclerview-v7:${support}"
+    compile "com.android.support:support-annotations:${support}"
+
+    // EventBus library, used to publish/subscribe event bus
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    // Gson library, used to convert Java Objects into their JSON representation and back
+    compile "com.squareup.retrofit2:converter-gson:2.1.0"
+
+    // Log library, used to inject log printing
+    compile 'com.jakewharton.timber:timber:4.4.0'
+
+    // Image loader library, used to handle asynchronous loading and caching of images
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+
+    // Text drawable library , used to provide images with letter/text
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+}

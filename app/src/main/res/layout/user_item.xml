@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chall.qonto.ui.UserView
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:foreground="?attr/selectableItemBackground"
+	android:minHeight="?attr/listPreferredItemHeightLarge"
+	android:paddingEnd="?attr/listPreferredItemPaddingRight"
+	android:paddingStart="?attr/listPreferredItemPaddingLeft"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout
+		android:showDividers="middle"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:divider="@drawable/spacer_medium">
+		<android.support.v7.widget.AppCompatImageView
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:id="@android:id/icon"/>
+		<android.support.v7.widget.AppCompatTextView
+			android:maxLines="1"
+			android:ellipsize="end"
+			android:textStyle="bold"
+			android:id="@android:id/text1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			style="@style/TextAppearance.AppCompat.Large"/>
+	</LinearLayout>
+</com.chall.qonto.ui.UserView>
